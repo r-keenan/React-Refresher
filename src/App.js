@@ -13,7 +13,12 @@ const App = () => {
   const addNewGoalHandler = (newGoal) => {
     // courseGoals.push(newGoal);
     // console.log(courseGoals);
-    setCourseGoals(courseGoals.concat(newGoal));
+
+    //This is an alternate way to update state, but can cause issues when calling multiple updated states
+    //setCourseGoals(courseGoals.concat(newGoal));
+
+    //This is better to use. This is more effective when updating multiple states.
+    setCourseGoals((prevCourseGoals) => prevCourseGoals.concat(newGoal));
   };
 
   return (
