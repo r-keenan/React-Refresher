@@ -1,18 +1,19 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 import GoalList from "./components/GoalList/GoalList";
 import NewGoal from "./components/NewGoal/NewGoal";
 
 const App = () => {
-  const courseGoals = [
+  const [courseGoals, setCourseGoals] = useState([
     { id: "cg1", text: "Finish the Course" },
     { id: "cg2", text: "Learn all about the Course Main Topic" },
     { id: "cg3", text: "Help other students in the Course Q&A" },
-  ];
+  ]);
   //This is a callback. Needs to be used when passing data from parent to child component.
   const addNewGoalHandler = (newGoal) => {
-    courseGoals.push(newGoal);
-    console.log(courseGoals);
+    // courseGoals.push(newGoal);
+    // console.log(courseGoals);
+    setCourseGoals(courseGoals.concat(newGoal));
   };
 
   return (

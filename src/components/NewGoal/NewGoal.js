@@ -4,7 +4,7 @@ import "./NewGoal.css";
 
 const NewGoal = (props) => {
   const addGoalHandler = (e) => {
-    //This prevents the submitting of the form
+    //This prevents the submitting of the form to the server.
     e.preventDefault();
 
     const newGoal = {
